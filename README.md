@@ -17,8 +17,7 @@ ___
 A página inicial em formato desktop é vista na imagem abaixo:
 
 ![aplicação](blob:https://imgur.com/744e8761-a209-40f3-88d2-32033fa7c2be)
-
-
+<img src="blob:https://imgur.com/744e8761-a209-40f3-88d2-32033fa7c2be" />
 
 ___
 

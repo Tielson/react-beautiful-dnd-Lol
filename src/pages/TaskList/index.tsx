@@ -43,12 +43,13 @@ function TaskList() {
       // Impedir adição se a lista 2 já tiver 5 itens
       return
     }
+    if (sourceArray && destinationArray) {
+      const [movedHero] = sourceArray.splice(result.source.index, 1)
+      destinationArray.splice(result.destination.index, 0, movedHero)
 
-    const [movedHero] = sourceArray.splice(result.source.index, 1)
-    destinationArray.splice(result.destination.index, 0, movedHero)
-
-    setHeroesInList1([...heroesInList1])
-    setHeroesInList2([...heroesInList2])
+      setHeroesInList1([...heroesInList1])
+      setHeroesInList2([...heroesInList2])
+    }
   }
 
   useEffect(() => {
