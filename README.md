@@ -3,7 +3,7 @@
 </p>
 
 ## 💻 Sobre
-Ideia inicial foi conseguir utilizar a bilbioteca "react-beautiful-dnd". Arrastar e soltar (em inglês, "Drag and Drop") é uma técnica de interação comum, que permite que as pessoas possam intuitivamente mudar as coisas de lugar na página. Pode ter a ver com reordenar uma lista ou até mesmo montar um quebra-cabeças.Desenvolvida pela Atlassian.  Se você não conhece a Atlassian, eles são a equipe por trás do Jira.
+Ideia inicial foi conseguir utilizar a bilbioteca "react-beautiful-dnd". Arrastar e soltar (em inglês, "Drag and Drop") é uma técnica de interação comum, que permite que as pessoas possam intuitivamente mudar as coisas de lugar na página. Pode ter a ver com reordenar uma lista ou até mesmo montar um quebra-cabeças. Desenvolvida pela Atlassian.  Se você não conhece a Atlassian, eles são a equipe por trás do Jira.
 
 
 ___
@@ -11,12 +11,10 @@ ___
 ## 🎨 Layout
 A página inicial em formato desktop é vista na imagem abaixo:
 
-<<<<<<< HEAD
-![aplicação](blob:https://imgur.com/744e8761-a209-40f3-88d2-32033fa7c2be)
-<img src="blob:https://imgur.com/744e8761-a209-40f3-88d2-32033fa7c2be" />
-=======
+
+
 ![Texto Alternativo](https://i.imgur.com/TjzJB6z.png)
->>>>>>> 4af2f6f9d7848006b9a8382213e78c632165853a
+
 
 ___
 
