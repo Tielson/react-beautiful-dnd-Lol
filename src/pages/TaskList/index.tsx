@@ -14,11 +14,8 @@ interface ChampionProps {
 function TaskList() {
   const [heroesInList1, setHeroesInList1] = useState<ChampionProps[]>([])
   const [heroesInList2, setHeroesInList2] = useState<ChampionProps[]>([])
-  const [filter, setFilter] = useState('')
 
-  const filteredHeroes = heroesInList1.filter((hero) =>
-    hero.name.toLowerCase().includes(filter.toLowerCase()),
-  )
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const onDragEnd = (result: any) => {
     if (!result.destination) return
 
@@ -28,13 +25,13 @@ function TaskList() {
     let sourceArray, destinationArray
 
     if (sourceList === 'list1') {
-      sourceArray = filteredHeroes // Use a lista filtrada como fonte
+      sourceArray = heroesInList1
     } else if (sourceList === 'list2') {
       sourceArray = heroesInList2
     }
 
     if (destinationList === 'list1') {
-      destinationArray = filteredHeroes // Use a lista filtrada como destino
+      destinationArray = heroesInList1
     } else if (destinationList === 'list2') {
       destinationArray = heroesInList2
     }
@@ -43,14 +40,12 @@ function TaskList() {
       // Impedir adição se a lista 2 já tiver 5 itens
       return
     }
-
     if (sourceArray && destinationArray) {
       const [movedHero] = sourceArray.splice(result.source.index, 1)
       destinationArray.splice(result.destination.index, 0, movedHero)
 
-      // Atualize apenas o estado dos campeões filtrados
-      setFilteredHeroes([...sourceArray])
-      setHeroesInList2(destinationArray)
+      setHeroesInList1([...heroesInList1])
+      setHeroesInList2([...heroesInList2])
     }
   }
 
@@ -72,7 +67,6 @@ function TaskList() {
         <h1 style={{ textAlign: 'center', marginTop: '30px' }}>
           Melhor comp para Solo/Duo!
         </h1>
-        <input type="text" onChange={(e) => setFilter(e.target.value)} />
       </div>
       <div className="box">
         <DragDropContext onDragEnd={onDragEnd}>
@@ -113,7 +107,7 @@ function TaskList() {
                 {...provided.droppableProps}
                 ref={provided.innerRef}
               >
-                {filteredHeroes.map((hero, index) => (
+                {heroesInList1.map((hero, index) => (
                   <Draggable
                     key={hero.key}
                     draggableId={hero.key}
