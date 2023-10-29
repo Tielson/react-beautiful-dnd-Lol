@@ -28,13 +28,13 @@ function TaskList() {
     let sourceArray, destinationArray
 
     if (sourceList === 'list1') {
-      sourceArray = heroesInList1
+      sourceArray = filteredHeroes // Use a lista filtrada como fonte
     } else if (sourceList === 'list2') {
       sourceArray = heroesInList2
     }
 
     if (destinationList === 'list1') {
-      destinationArray = heroesInList1
+      destinationArray = filteredHeroes // Use a lista filtrada como destino
     } else if (destinationList === 'list2') {
       destinationArray = heroesInList2
     }
@@ -43,12 +43,14 @@ function TaskList() {
       // Impedir adição se a lista 2 já tiver 5 itens
       return
     }
+
     if (sourceArray && destinationArray) {
       const [movedHero] = sourceArray.splice(result.source.index, 1)
       destinationArray.splice(result.destination.index, 0, movedHero)
 
-      setHeroesInList1([...heroesInList1])
-      setHeroesInList2([...heroesInList2])
+      // Atualize apenas o estado dos campeões filtrados
+      setFilteredHeroes([...sourceArray])
+      setHeroesInList2(destinationArray)
     }
   }
 
